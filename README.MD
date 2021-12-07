@@ -44,6 +44,13 @@
 
     - Se agrega la dependencia spring-boot-configuration-processor en el archivo pom.xml para que el proyecto pueda leer las propiedades declaradas en el archivo JwtIOProperties
 
+    - En properties.yml se agrega la siguiente instrucción para quitar el trace en la respuesta al cachar la excepción:
+  ```
+      server:
+        port: 8585
+        error:
+            include-stacktrace: never
+```
 
 #### 7.- Utils
 
@@ -68,3 +75,18 @@
       - grantType no venga vacio y que su valor sea igual a CLIENT_CREDENTIALS
       - ParamMap(Colección de parametros) no vengan invalidados o vacios
     - En el método login (AuthController) se ha agregado el método  validator.validate(paramMap, grantType);
+
+
+
+#### 9.- Agregando JWT a nuestro proyecto
+
+    - El proyecto/libreria usado es fusionauth/fusionauth-jwt
+      - Repo: https://github.com/fusionauth/fusionauth-jwt
+    - https://jwt.io/libraries?language=Java
+
+    - En el pom.xml se agrega la librería de JWT
+
+    - Se crea archivo JwtIo en paquete security y los atributos de este archivo se valuan con los valores de el archivo aplication.yml dandole valores por defecto
+      - En este archivo se crea el método que genera el token generateToken(Object src)
+    - En class AuthServices se modifican los valores en duro por valores asignados en variables
+    *** Hasta este piunto, ya se puede verificar la generación del token a través de postman y verificar el contenido del token usando el debugger de jwt.io***
