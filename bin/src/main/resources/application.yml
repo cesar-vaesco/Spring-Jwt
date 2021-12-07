@@ -1,0 +1,16 @@
+server:
+    port: 8585
+
+jms:
+    jwt:
+        security:
+            enabled: true
+        timezone: "America/Ciudad_de_Mexico"
+        issuer: "www.vaescode.com"
+        token:
+            auth:
+                path: "/oauth/client_credential/accesstoken"
+            secret: "esta es la frase secreta"
+            expires-in: 3600 #1H - segundos
+        excluded:
+            path: "/v1.0/multi/v1.0/otraexclusion"
