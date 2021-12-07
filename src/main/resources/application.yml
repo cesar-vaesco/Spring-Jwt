@@ -1,5 +1,6 @@
 server:
     port: 8585
+
 jms:
     jwt:
         security:
@@ -8,8 +9,8 @@ jms:
         issuer: "www.vaescode.com"
         token:
             auth:
-                path: "/v1.0/oauth/client_credential/accesstoken"
-            secret: "Esta es la firma secreta que nadie debe conocer"
-            expires_in: 3600 #segundos
+                path: "/oauth/client_credential/accesstoken"
+            secret: "esta es la frase secreta"
+            expires-in: 3600 #1H - segundos
         excluded:
-            path: "/v1.0/multi/v1.0/otra_exclusion" #ruta de la peticion que no requiere autenticacion
+            path: "/v1.0/multi/v1.0/otraexclusion"

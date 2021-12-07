@@ -43,3 +43,12 @@
     - En el archivo properties.yml se han configurado el valor de las propiedades que se han declarado en la clase JwtIOProperties
 
     - Se agrega la dependencia spring-boot-configuration-processor en el archivo pom.xml para que el proyecto pueda leer las propiedades declaradas en el archivo JwtIOProperties
+
+
+#### 7.- Utils
+
+    - DateUtils
+      - En esta clase se han declarado tres métodos los cuales tienen por finalidad:
+      - Dar formato a la fecha
+      - Obtener la fecha en el momento en que se genere el token
+      - Convertir la fecha de generación del token en milisegundos
