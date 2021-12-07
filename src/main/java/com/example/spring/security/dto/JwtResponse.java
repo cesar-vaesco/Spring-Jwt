@@ -16,7 +16,7 @@ public class JwtResponse {
     private String accessToken;
 
     @JsonProperty(value = "expires_in")
-    private String expiresIn;
+    private int expiresIn;
 
     @JsonProperty(value = "issued_at")
     private String issueAt;
