@@ -10,6 +10,6 @@ jms:
             auth:
                 path: "/v1.0/oauth/client_credential/accesstoken"
             secret: "Esta es la firma secreta que nadie debe conocer"
-            expiration: 3600 #segundos
+            expires_in: 3600 #segundos
         excluded:
             path: "/v1.0/multi/v1.0/otra_exclusion" #ruta de la peticion que no requiere autenticacion

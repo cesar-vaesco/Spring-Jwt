@@ -41,3 +41,5 @@
 
 #### 6.- Configuración de properties
     - En el archivo properties.yml se han configurado el valor de las propiedades que se han declarado en la clase JwtIOProperties
+
+    - Se agrega la dependencia spring-boot-configuration-processor en el archivo pom.xml para que el proyecto pueda leer las propiedades declaradas en el archivo JwtIOProperties

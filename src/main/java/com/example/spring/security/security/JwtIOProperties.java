@@ -27,7 +27,7 @@ public class JwtIOProperties {
 
         private Auth auth;
         private String secret;
-        private int expiresIn;
+        private int expires_in;
     }
 
     @Data
