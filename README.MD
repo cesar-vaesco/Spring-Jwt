@@ -59,3 +59,12 @@
     - Gson Utils
       - En esta clase se han declarado tres métodos estaticos los cuales:
       - Dan formato json a cadena de tipo string y viceversa
+
+#### 8.- Validators
+
+    - Se ha agregado una excepción personalizada mandando código de respuesta y tipo de excepcion generada al momento de generar el token con datos erroneos.
+    - Se ha creado la clase AuthValidator en la cual se busca validar con el método validate que:
+      - CLIENT_CREDENTIALS cuente con el valor correcto
+      - grantType no venga vacio y que su valor sea igual a CLIENT_CREDENTIALS
+      - ParamMap(Colección de parametros) no vengan invalidados o vacios
+    - En el método login (AuthController) se ha agregado el método  validator.validate(paramMap, grantType);
