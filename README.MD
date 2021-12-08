@@ -89,4 +89,13 @@
     - Se crea archivo JwtIo en paquete security y los atributos de este archivo se valuan con los valores de el archivo aplication.yml dandole valores por defecto
       - En este archivo se crea el método que genera el token generateToken(Object src)
     - En class AuthServices se modifican los valores en duro por valores asignados en variables
-    *** Hasta este piunto, ya se puede verificar la generación del token a través de postman y verificar el contenido del token usando el debugger de jwt.io***
+    *** Hasta este punto, ya se puede verificar la generación del token a través de postman y verificar el contenido del token usando el debugger de jwt.io***
+
+
+    - Se continua con la implementación de la clase JwtIO crando el método que valida el token
+    - Se configura el método que carga(getPayload) la información del Jwt
+
+    - En el paquete security se crea la clase InterceptorJwtIO en el cual se crea la funcionalidad que permite limitaro validar  las rutas a las cuales se tiene permiso con el token
+
+    - Se crea la clase JwtController en la cual se hace la primera prueba de las rutas a interceptar; para efectos de la practica de momento es permitido el accesoS
+#### 10.-

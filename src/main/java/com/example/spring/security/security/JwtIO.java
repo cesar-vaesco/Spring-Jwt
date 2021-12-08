@@ -30,7 +30,7 @@ public class JwtIO {
 
         String subject = GsonUtils.serializae(src);
 
-        //Construir un HMAC signer usandoel SHA-256
+        // Construir un HMAC signer usandoel SHA-256
         Signer signer = HMACSigner.newSHA256Signer(SECRET);
 
         TimeZone tz = TimeZone.getTimeZone(TIMEZONE);
@@ -38,22 +38,33 @@ public class JwtIO {
         ZonedDateTime zdt = ZonedDateTime.now(tz.toZoneId()).plusSeconds(EXPIRES_IN);
 
         JWT jwt = new JWT()
-        .setIssuer(ISSUER)
-        .setIssuedAt(ZonedDateTime.now(tz.toZoneId()))
-        .setSubject(subject)
-        .setExpiration(zdt);
-
+                .setIssuer(ISSUER)
+                .setIssuedAt(ZonedDateTime.now(tz.toZoneId()))
+                .setSubject(subject)
+                .setExpiration(zdt);
 
         return JWT.getEncoder().encode(jwt, signer);
     }
 
     public boolean validateToken(String encodedJWT) {
-        return false;
+
+        /*
+         * boolean result = true;
+         * JWT jwt = jwt(encodedJWT);
+         * result = jwt.isExpired();
+         * return result;
+         */
+
+        JWT jwt = jwt(encodedJWT);
+        return jwt.isExpired();
+
     }
 
     public String getPayload(String encodedJWT) {
 
-        return null;
+        JWT jwt = jwt(encodedJWT);
+
+        return jwt.subject;
     }
 
     private JWT jwt(String encodedJWT) {
