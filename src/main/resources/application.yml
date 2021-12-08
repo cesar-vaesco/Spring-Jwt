@@ -13,6 +13,6 @@ jms:
             auth:
                 path: "/v1.0/oauth/client_credential/accesstoken"
             secret: "esta es la frase secreta"
-            expires-in: 3600 #1H - segundos
+            expires-in: 60 #1H - segundos declaración de expiración de token
         excluded:
             path: "/v1.0/multi/v1.0/otraexclusion"

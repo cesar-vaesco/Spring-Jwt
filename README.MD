@@ -97,7 +97,13 @@
 
     - En el paquete security se crea la clase InterceptorJwtIO en el cual se crea la funcionalidad que permite limitaro validar  las rutas a las cuales se tiene permiso con el token
 
-    - Se crea la clase JwtController en la cual se hace la primera prueba de las rutas a interceptar; para efectos de la practica de momento es permitido el accesoS
-#### 10.-
+    - Se crea la clase JwtController en la cual se hace la primera prueba de las rutas a interceptar; para efectos de la practica de momento es permitido el accesos
+
+#### 10.- Creación de un usuario
+
+    - Se prueba el vencimiento del token modificando el campo expirin-in en el archivo application.yml
+    - Se crea un usuario con la intención mandar su información a través del token
+    - Se valida que en caso de que el token haya expirado se notifique con código 401 Unauthorized
+    - En clase AuthService se crea un usuario para poder usar su info en la creación del token
 
 #### https://github.com/jesusmatiz/001.-Spring-Boot-Security-con-JWT ####

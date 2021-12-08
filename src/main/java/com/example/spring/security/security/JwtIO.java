@@ -55,8 +55,17 @@ public class JwtIO {
          * return result;
          */
 
-        JWT jwt = jwt(encodedJWT);
-        return jwt.isExpired();
+        boolean result = false;
+
+        try {
+            //Capturar la expiración del token
+            JWT jwt = jwt(encodedJWT);
+            result = jwt.isExpired();
+        } catch (Exception e) {
+            result = true;
+        }
+
+        return result;
 
     }
 
