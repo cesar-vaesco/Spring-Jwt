@@ -33,7 +33,7 @@ public class InterceptorJwtIO implements HandlerInterceptor {
             validate = true;
         }
 
-        if (validate && request.getHeader("Authorization") != null && !request.getHeader("Authorization").isEmpty()) {
+        if (!validate && request.getHeader("Authorization") != null && !request.getHeader("Authorization").isEmpty()) {
 
 
             String token = request.getHeader("Authorization").replace("Bearer ", "");
@@ -45,7 +45,6 @@ public class InterceptorJwtIO implements HandlerInterceptor {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
         }
 
-
         return validate;
     }
 
@@ -53,9 +52,8 @@ public class InterceptorJwtIO implements HandlerInterceptor {
         boolean result = false;
 
         for (String exc : excluded) {
-            if (exc.equals("#") && exc.equals(path)) {
+            if (!exc.equals("#") && exc.equals(path)) {
                 result = true;
-                break;
             }
         }
         return result;

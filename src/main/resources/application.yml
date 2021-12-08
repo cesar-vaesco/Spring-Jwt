@@ -7,11 +7,11 @@ jms:
     jwt:
         security:
             enabled: true
-        timezone: "America/Ciudad_de_Mexico"
+        timezone: "America/Mexico_City"
         issuer: "www.vaescode.com"
         token:
             auth:
-                path: "/oauth/client_credential/accesstoken"
+                path: "/v1.0/oauth/client_credential/accesstoken"
             secret: "esta es la frase secreta"
             expires-in: 3600 #1H - segundos
         excluded:

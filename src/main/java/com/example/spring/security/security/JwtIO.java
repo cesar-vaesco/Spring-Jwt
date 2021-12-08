@@ -63,7 +63,6 @@ public class JwtIO {
     public String getPayload(String encodedJWT) {
 
         JWT jwt = jwt(encodedJWT);
-
         return jwt.subject;
     }
 

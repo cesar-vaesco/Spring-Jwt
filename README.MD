@@ -99,3 +99,5 @@
 
     - Se crea la clase JwtController en la cual se hace la primera prueba de las rutas a interceptar; para efectos de la practica de momento es permitido el accesoS
 #### 10.-
+
+#### https://github.com/jesusmatiz/001.-Spring-Boot-Security-con-JWT ####

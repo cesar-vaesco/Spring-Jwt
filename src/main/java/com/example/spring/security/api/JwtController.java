@@ -12,6 +12,7 @@ public class JwtController {
 
     @GetMapping(path = "version")
     public ResponseEntity<Object> version(){
+
         return ResponseEntity.ok("Version 1.0");
     }
 }
